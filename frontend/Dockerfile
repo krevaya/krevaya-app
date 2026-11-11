@@ -8,7 +8,7 @@ COPY LICENSE CREDITS.md /src/
 COPY backend/app/content/font_files /src/backend/app/content/font_files
 RUN npm run build
 
-FROM nginx:1.29-alpine
+FROM nginx:1.31-alpine
 # both end up in site.conf.template when the container starts
 ENV API_UPSTREAM=server:8000 \
     WEB_LISTEN=8460
