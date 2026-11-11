@@ -1,0 +1,318 @@
+{
+ "title": "Thank-you card",
+ "category": "print",
+ "order": 8,
+ "doc": {
+  "pages": [
+   {
+    "id": "thanp1",
+    "width": 2100,
+    "height": 1500,
+    "background": {
+     "type": "solid",
+     "color": "#fbe4d8"
+    },
+    "elements": [
+     {
+      "id": "than001",
+      "type": "shape",
+      "x": 1660,
+      "y": -160,
+      "width": 620,
+      "height": 560,
+      "rotation": 12,
+      "opacity": 1,
+      "name": "Blob",
+      "shape": "blob",
+      "fill": {
+       "type": "solid",
+       "color": "#f5cdb9"
+      }
+     },
+     {
+      "id": "than002",
+      "type": "shape",
+      "x": 1500,
+      "y": 1210,
+      "width": 700,
+      "height": 480,
+      "rotation": -8,
+      "opacity": 1,
+      "name": "Blob",
+      "shape": "blob",
+      "fill": {
+       "type": "solid",
+       "color": "#f5cdb9"
+      }
+     },
+     {
+      "id": "than003",
+      "type": "shape",
+      "x": 148,
+      "y": 148,
+      "width": 824,
+      "height": 1204,
+      "rotation": 0,
+      "opacity": 1,
+      "name": "Arch outline",
+      "shape": "arch",
+      "fill": {
+       "type": "solid",
+       "color": "rgba(0,0,0,0)"
+      },
+      "stroke": "#c45a3c",
+      "strokeWidth": 4
+     },
+     {
+      "id": "than004",
+      "type": "image",
+      "x": 180,
+      "y": 180,
+      "width": 760,
+      "height": 1140,
+      "rotation": 0,
+      "opacity": 1,
+      "name": "Flower photo",
+      "src": "asset:thankyou-flowers.jpg",
+      "naturalWidth": 975,
+      "naturalHeight": 1300,
+      "mask": "arch",
+      "slot": "photo"
+     },
+     {
+      "id": "than005",
+      "type": "svg",
+      "x": 1190,
+      "y": 250,
+      "width": 120,
+      "height": 120,
+      "rotation": 0,
+      "opacity": 1,
+      "name": "Sparkles",
+      "kind": "illustration",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 120\"><path d=\"M50 6 C53 34 64 45 92 48 C64 51 53 62 50 90 C47 62 36 51 8 48 C36 45 47 34 50 6Z\" fill=\"#c45a3c\"/><path d=\"M96 70 C97 82 102 87 114 88 C102 89 97 94 96 106 C95 94 90 89 78 88 C90 87 95 82 96 70Z\" fill=\"#e8956f\"/><circle cx=\"100\" cy=\"24\" r=\"6\" fill=\"#2b3560\"/></svg>"
+     },
+     {
+      "id": "than006",
+      "type": "text",
+      "x": 1060,
+      "y": 380,
+      "width": 900,
+      "height": 504,
+      "rotation": 0,
+      "opacity": 1,
+      "text": "Thank\nyou",
+      "fontFamily": "Pacifico",
+      "fontSize": 240,
+      "fontWeight": 400,
+      "align": "center",
+      "lineHeight": 1.05,
+      "letterSpacing": 0,
+      "color": "#2b3560",
+      "slot": "headline",
+      "role": "heading"
+     },
+     {
+      "id": "than007",
+      "type": "text",
+      "x": 1060,
+      "y": 1010,
+      "width": 900,
+      "height": 65,
+      "rotation": 0,
+      "opacity": 1,
+      "text": "For everything",
+      "fontFamily": "Josefin Sans",
+      "fontSize": 54,
+      "fontWeight": 600,
+      "align": "center",
+      "lineHeight": 1.2,
+      "letterSpacing": 400,
+      "color": "#c45a3c",
+      "uppercase": true,
+      "slot": "subhead"
+     },
+     {
+      "id": "than008",
+      "type": "svg",
+      "x": 1404,
+      "y": 1105,
+      "width": 212,
+      "height": 60,
+      "rotation": 0,
+      "opacity": 1,
+      "name": "Heart line",
+      "kind": "illustration",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 212 60\"><path d=\"M10 32 H76 M136 32 H202\" stroke=\"#c45a3c\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M90 34 C90 24 102 20 106 30 C110 20 122 24 122 34 C122 44 106 52 106 52 C106 52 90 44 90 34Z\" transform=\"translate(0 -6)\" fill=\"#c45a3c\"/></svg>"
+     }
+    ],
+    "name": "Front"
+   },
+   {
+    "id": "thanp2",
+    "width": 2100,
+    "height": 1500,
+    "background": {
+     "type": "solid",
+     "color": "#fffaf6"
+    },
+    "elements": [
+     {
+      "id": "than009",
+      "type": "shape",
+      "x": 0,
+      "y": 0,
+      "width": 1050,
+      "height": 1500,
+      "rotation": 0,
+      "opacity": 1,
+      "name": "Left panel",
+      "shape": "rect",
+      "fill": {
+       "type": "solid",
+       "color": "#fbe4d8"
+      }
+     },
+     {
+      "id": "than010",
+      "type": "shape",
+      "x": -180,
+      "y": 1120,
+      "width": 640,
+      "height": 520,
+      "rotation": -14,
+      "opacity": 1,
+      "name": "Blob",
+      "shape": "blob",
+      "fill": {
+       "type": "solid",
+       "color": "#f5cdb9"
+      }
+     },
+     {
+      "id": "than011",
+      "type": "svg",
+      "x": 465,
+      "y": 330,
+      "width": 120,
+      "height": 120,
+      "rotation": 0,
+      "opacity": 1,
+      "name": "Sparkles",
+      "kind": "illustration",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 120\"><path d=\"M50 6 C53 34 64 45 92 48 C64 51 53 62 50 90 C47 62 36 51 8 48 C36 45 47 34 50 6Z\" fill=\"#c45a3c\"/><path d=\"M96 70 C97 82 102 87 114 88 C102 89 97 94 96 106 C95 94 90 89 78 88 C90 87 95 82 96 70Z\" fill=\"#e8956f\"/><circle cx=\"100\" cy=\"24\" r=\"6\" fill=\"#2b3560\"/></svg>"
+     },
+     {
+      "id": "than012",
+      "type": "text",
+      "x": 100,
+      "y": 520,
+      "width": 850,
+      "height": 325,
+      "rotation": 0,
+      "opacity": 1,
+      "text": "You made\nour day",
+      "fontFamily": "Pacifico",
+      "fontSize": 130,
+      "fontWeight": 400,
+      "align": "center",
+      "lineHeight": 1.25,
+      "letterSpacing": 0,
+      "color": "#2b3560",
+      "slot": "insideHeadline"
+     },
+     {
+      "id": "than013",
+      "type": "svg",
+      "x": 419,
+      "y": 900,
+      "width": 212,
+      "height": 60,
+      "rotation": 0,
+      "opacity": 1,
+      "name": "Heart line",
+      "kind": "illustration",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 212 60\"><path d=\"M10 32 H76 M136 32 H202\" stroke=\"#c45a3c\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M90 34 C90 24 102 20 106 30 C110 20 122 24 122 34 C122 44 106 52 106 52 C106 52 90 44 90 34Z\" transform=\"translate(0 -6)\" fill=\"#c45a3c\"/></svg>"
+     },
+     {
+      "id": "than014",
+      "type": "text",
+      "x": 1200,
+      "y": 300,
+      "width": 780,
+      "height": 125,
+      "rotation": 0,
+      "opacity": 1,
+      "text": "Dear Sam,",
+      "fontFamily": "Caveat",
+      "fontSize": 104,
+      "fontWeight": 700,
+      "align": "left",
+      "lineHeight": 1.2,
+      "letterSpacing": 0,
+      "color": "#2b3560",
+      "slot": "recipient"
+     },
+     {
+      "id": "than015",
+      "type": "text",
+      "x": 1200,
+      "y": 450,
+      "width": 760,
+      "height": 442,
+      "rotation": 0,
+      "opacity": 1,
+      "text": "Thank you for the flowers, the long phone calls and for turning up with soup when we needed it most. We are so lucky to have you in our lives.",
+      "fontFamily": "Caveat",
+      "fontSize": 68,
+      "fontWeight": 500,
+      "align": "left",
+      "lineHeight": 1.3,
+      "letterSpacing": 0,
+      "color": "#3d3a4a",
+      "slot": "message"
+     },
+     {
+      "id": "than016",
+      "type": "text",
+      "x": 1200,
+      "y": 948,
+      "width": 780,
+      "height": 82,
+      "rotation": 0,
+      "opacity": 1,
+      "text": "With love,",
+      "fontFamily": "Caveat",
+      "fontSize": 68,
+      "fontWeight": 500,
+      "align": "left",
+      "lineHeight": 1.2,
+      "letterSpacing": 0,
+      "color": "#3d3a4a"
+     },
+     {
+      "id": "than017",
+      "type": "text",
+      "x": 1200,
+      "y": 1034,
+      "width": 780,
+      "height": 125,
+      "rotation": 0,
+      "opacity": 1,
+      "text": "Priya & Sam",
+      "fontFamily": "Caveat",
+      "fontSize": 104,
+      "fontWeight": 700,
+      "align": "left",
+      "lineHeight": 1.2,
+      "letterSpacing": 0,
+      "color": "#c45a3c",
+      "slot": "signature"
+     }
+    ],
+    "name": "Inside"
+   }
+  ],
+  "settings": {}
+ }
+}

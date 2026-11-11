@@ -1,0 +1,67 @@
+name: Bug report
+description: Something in Krevaya doesn't work the way it should
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. If it's a security problem, please don't file it here:
+        use the repository's **Security** tab and choose **Report a vulnerability**.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Tell us what you tried and what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smallest set of steps that shows the problem. A tiny design or backup file is gold.
+      placeholder: |
+        1. Open the Recipe card template
+        2. Select the headline
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: dropdown
+    id: setup
+    attributes:
+      label: How are you running Krevaya?
+      options:
+        - Docker compose
+        - Linux server (nginx and systemd)
+        - Local development setup
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Commit
+      description: Run `git rev-parse --short HEAD` in your copy, or give the date you last updated.
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Firefox 142, Chrome 140, Safari 19
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Any errors from the browser console or the server log.
+      render: shell
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, a screen recording or other details.

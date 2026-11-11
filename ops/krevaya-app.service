@@ -1,0 +1,34 @@
+# Runs the Krevaya API under systemd when you're not using containers.
+#   sudo useradd --system --home /opt/krevaya-app krevaya
+#   cd /opt/krevaya-app/backend && uv venv && uv pip install -r pyproject.toml --extra s3 --extra redis
+#   sudo cp ops/krevaya-app.service /etc/systemd/system/ && sudo systemctl enable --now krevaya-app
+# Reads /opt/krevaya-app/.env. Stay on a single uvicorn process: open editing rooms are held in memory.
+
+[Unit]
+Description=Krevaya API
+After=network-online.target postgresql.service redis-server.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=krevaya
+Group=krevaya
+WorkingDirectory=/opt/krevaya-app/backend
+EnvironmentFile=-/opt/krevaya-app/.env
+ExecStartPre=/opt/krevaya-app/backend/.venv/bin/python -m app.cli migrate
+ExecStart=/opt/krevaya-app/backend/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --proxy-headers --forwarded-allow-ips=127.0.0.1
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=20
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+ReadWritePaths=/opt/krevaya-app/backend/data
+
+[Install]
+WantedBy=multi-user.target

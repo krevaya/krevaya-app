@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+backend/data/
+*.db
+.DS_Store
+coverage/
+*.egg-info/
+
+# playwright
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/

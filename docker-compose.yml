@@ -1,0 +1,82 @@
+# Krevaya in containers: postgres, the server (API + live editing) and the webapp.
+#
+#   cp .env.example .env        then fill in SECRET_KEY, SITE_URL and POSTGRES_PASSWORD
+#   docker compose up -d --build
+#   docker compose exec server python -m app.cli create-admin
+#
+# Optional extras, switched on with profiles:
+#   --profile cache   a throwaway redis for shared rate limits (REDIS_URL=redis://cache:6379/0)
+#   --profile dev     only a local postgres on 127.0.0.1:5432 for hacking on the code:
+#                     docker compose --profile dev up -d localdb
+name: krevaya-app
+
+x-postgres: &postgres
+  image: postgres:16-alpine
+  healthcheck:
+    test: ["CMD-SHELL", "pg_isready -U krevaya -d krevaya"]
+    interval: 5s
+    timeout: 3s
+    retries: 30
+
+services:
+  postgres:
+    <<: *postgres
+    environment:
+      POSTGRES_USER: krevaya
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-krevaya}
+      POSTGRES_DB: krevaya
+    volumes:
+      - dbstore:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  server:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+asyncpg://krevaya:${POSTGRES_PASSWORD:-krevaya}@postgres:5432/krevaya
+      DATA_DIR: /data
+      SNAPSHOT_URL: http://webapp:8460
+    volumes:
+      - uploads:/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  webapp:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "${WEB_PORT:-8460}:8460"
+    depends_on:
+      - server
+    restart: unless-stopped
+
+  cache:
+    image: redis:7-alpine
+    profiles: [cache]
+    # rate-limit counters only, nothing worth keeping on disk
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    restart: unless-stopped
+
+  localdb:
+    <<: *postgres
+    profiles: [dev]
+    environment:
+      POSTGRES_USER: krevaya
+      POSTGRES_PASSWORD: krevaya
+      POSTGRES_DB: krevaya
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - localdb:/var/lib/postgresql/data
+
+volumes:
+  dbstore:
+  uploads:
+  localdb:

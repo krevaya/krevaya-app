@@ -1,0 +1,16 @@
+U²-Net small (U²-Netp)
+
+Model: Xuebin Qin et al., U²-Net
+Project: https://github.com/xuebinqin/U-2-Net
+Licence: Apache-2.0; the full text is in LICENSE.txt beside this file.
+
+The ONNX file is from rembg's v0.0.0 release:
+https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2netp.onnx
+
+File: u2netp.onnx
+Size: 4,574,861 bytes
+SHA-256: 309c8469258dda742793dce0ebea8e6dd393174f89934733ecc8b14c76f4ddd8
+
+The browser worker follows rembg's U2netpSession input normalisation and output
+mask normalisation. rembg is by Daniel Gatis, under the MIT licence; its notice
+is in rembg-LICENSE.txt beside this file.
