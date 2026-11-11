@@ -8,6 +8,10 @@ updates:
     groups:
       frontend-minor-and-patch:
         update-types: [minor, patch]
+    ignore:
+      # major versions need a planned migration, so they're updated by hand
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: pip
     directory: /backend
@@ -17,6 +21,9 @@ updates:
     groups:
       backend-minor-and-patch:
         update-types: [minor, patch]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
@@ -30,3 +37,7 @@ updates:
     directories: [/backend, /frontend]
     schedule:
       interval: weekly
+    ignore:
+      # base images (Python, Node, nginx) move deliberately, after testing the built image
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
